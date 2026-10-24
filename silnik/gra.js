@@ -11,7 +11,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
 let T, KEY, timer=null;
-const S={score:0,streak:0,best:0,tab:"start",done:{},mc:null,tf:null,mt:null,op:null,wrong:[]};
+const S={mcN:20,score:0,streak:0,best:0,tab:"start",done:{},mc:null,tf:null,mt:null,op:null,wrong:[]};
 
 function test(data){
   T=Object.assign({abcd:[],pf:[],pary:[],otwarte:[]},data);
@@ -34,7 +34,7 @@ const ALL=[["start","Start"],["mc","Quiz ABCD"],["tf","Prawda/fałsz"],["mt","Pa
 const has=k=>({mc:T.abcd,tf:T.pf,mt:T.pary,op:T.otwarte})[k]?.length;
 const TABS=()=>{let n=0;return ALL.filter(([k])=>k==="start"||k==="end"||has(k)).map(([k,l])=>[k,(k==="start"||k==="end")?l:(++n)+". "+l])};
 const nextOf=k=>{const t=TABS().map(x=>x[0]);return t[t.indexOf(k)+1]||"end"};
-const maxPts=()=>T.abcd.length*2+T.pf.length+T.pary.reduce((s,p)=>s+p.pairs.length,0)+T.otwarte.reduce((s,o)=>s+o.pts.length,0);
+const maxPts=()=>(T.abcd.length>25?S.mcN:T.abcd.length)*2+T.pf.length+T.pary.reduce((s,p)=>s+p.pairs.length,0)+T.otwarte.reduce((s,o)=>s+o.pts.length,0);
 
 function hud(){ $("#score").textContent=S.score+" pkt"; $("#streak").textContent="Seria: "+S.streak+(S.best?" · rekord "+S.best:""); }
 function add(ok,pts){ if(ok){S.streak++;S.best=Math.max(S.best,S.streak);S.score+=pts+(S.streak>=3&&pts?1:0);}else S.streak=0; hud(); }
@@ -46,7 +46,7 @@ const stage=h=>$("#stage").innerHTML=h;
 function start(){
   const prev=store.get(KEY);
   const steps=[
-    has("mc")&&`<div class="step"><b>Quiz ABCD</b><span>${T.abcd.length} pytań · 2 pkt</span></div>`,
+    has("mc")&&`<div class="step"><b>Quiz ABCD</b><span>${T.abcd.length>25?"losowe pytania z puli "+T.abcd.length:T.abcd.length+" pytań"} · 2 pkt</span></div>`,
     has("tf")&&`<div class="step"><b>Prawda / fałsz</b><span>${T.pf.length} zdań · 10 s na każde · 1 pkt</span></div>`,
     has("mt")&&`<div class="step"><b>Pary</b><span>${T.pary.length} plansz · 1 pkt za parę</span></div>`,
     has("op")&&`<div class="step"><b>Pytania otwarte</b><span>${T.otwarte.length} pytań · samoocena</span></div>`].filter(Boolean).join("");
@@ -54,13 +54,15 @@ function start(){
   <p style="margin:0">Za każdą dobrą odpowiedź są punkty. Trzy trafienia z rzędu dają serię i <b>+1 pkt bonusu</b> za każde kolejne. Etapy możesz robić w dowolnej kolejności.</p>
   <div class="intro">${steps}</div>
   ${prev?`<p class="small" style="margin:0">Twój najlepszy wynik na tym urządzeniu: <b>${prev.best} pkt</b> (${prev.pct}%), ostatnio ${esc(prev.date)}.</p>`:""}
+  ${T.abcd.length>25?`<div class="row" role="group" aria-label="Długość quizu"><span class="small">Pytań w quizie ABCD:</span>${[20,40,T.abcd.length].map(n=>`<button class="btn ${S.mcN===n?"":"ghost"}" data-n="${n}">${n===T.abcd.length?"wszystkie ("+n+")":n}</button>`).join("")}</div>`:""}
   <div class="row"><button class="btn gold" id="go1">Zaczynamy!</button></div>
   <p class="small" style="margin:0">Na końcu zobaczysz listę pytań, na których się potknęłaś, żeby wrócić do nich przed sprawdzianem.</p></section>`);
+  document.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>{S.mcN=+b.dataset.n;S.mc=null;start()});
   $("#go1").onclick=()=>go(TABS()[1][0]);
 }
 
 function mc(){
-  if(!S.mc) S.mc={list:shuffle(T.abcd),i:0,ok:0};
+  if(!S.mc) S.mc={list:shuffle(T.abcd).slice(0,T.abcd.length>25?S.mcN:T.abcd.length),i:0,ok:0};
   const st=S.mc; if(st.i>=st.list.length) return finish("mc",`Quiz ABCD: ${st.ok}/${st.list.length}`);
   const it=st.list[st.i], opts=shuffle([it.a,...it.w]);
   stage(`<section class="card"><div class="meta"><span>Pytanie ${st.i+1} z ${st.list.length}</span><span>Dobrze: ${st.ok}</span></div>
@@ -159,7 +161,7 @@ function end(){
    <div class="rank">${rank}</div>
    ${uniq.length?`<p style="margin:0"><b>Do powtórki przed sprawdzianem:</b></p><div class="review">${uniq.map(w=>`<div>${esc(w)}</div>`).join("")}</div>`:(S.score?`<p style="margin:0">Bez pomyłek. Jesteś gotowa! 🎉</p>`:`<p style="margin:0">Zrób najpierw któryś etap.</p>`)}
    <div class="row"><button class="btn gold" id="restart">Zagraj jeszcze raz</button><a class="btn ghost" href="index.html" style="text-decoration:none">Inne testy</a></div></section>`);
-  $("#restart").onclick=()=>{Object.assign(S,{score:0,streak:0,best:0,done:{},mc:null,tf:null,mt:null,op:null,wrong:[]});hud();go("start")};
+  $("#restart").onclick=()=>{Object.assign(S,{mcN:S.mcN,score:0,streak:0,best:0,done:{},mc:null,tf:null,mt:null,op:null,wrong:[]});hud();go("start")};
 }
 
 window.NaukaZosi={test};
