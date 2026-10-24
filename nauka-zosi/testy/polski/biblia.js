@@ -1,0 +1,72 @@
+/* Test: Biblia — Ponad słowami 1.1 (Nowa Era), s. 138–172.
+   Na podstawie notatek z lekcji (wrzesień–październik 2026). */
+NaukaZosi.test({
+ tytul: "Biblia",
+ przedmiot: "Język polski",
+ zakres: "Ponad słowami 1.1 · s. 138–172",
+ opis: "Hiob, Psalmy, Kohelet, przypowieści, Apokalipsa, symbolika i biblizmy.",
+ abcd: [
+  { "t": "Hiob", "q": "Kiedy mniej więcej powstała Księga Hioba?", "a": "ok. V w. p.n.e.", "w": [ "ok. I w. n.e.", "XI w. p.n.e.", "III w. n.e." ], "e": "Według notatek: księga powstała ok. V w. p.n.e." },
+  { "t": "Hiob", "q": "Do jakiego rodzaju ksiąg należy Księga Hioba?", "a": "mądrościowych (dydaktycznych)", "w": [ "prorockich", "historycznych", "ewangelii" ], "e": "Hiob, Psalmy i Kohelet to w zeszycie księgi mądrościowe, inaczej dydaktyczne." },
+  { "t": "Hiob", "q": "Hiob jest archetypem…", "a": "cierpienia niezawinionego", "w": [ "syna marnotrawnego", "zdrady przyjaciela", "pychy i kary" ], "e": "Hiob cierpi, choć nie zawinił. Stąd archetyp cierpienia niezawinionego." },
+  { "t": "Hiob", "q": "Dlaczego Bóg pozwolił szatanowi odebrać Hiobowi wszystkie dobra?", "a": "By udowodnić, że pobożność Hioba nie zależy od powodzenia w życiu", "w": [ "By ukarać Hioba za grzechy", "By sprawdzić przyjaciół Hioba", "Bo Hiob przestał się modlić" ], "e": "Próba miała pokazać, że Hiob wierzy bezinteresownie, nie dla nagrody." },
+  { "t": "Hiob", "q": "Kim jest „hiobowy pocieszyciel”?", "a": "Kimś, kto pocieszając, pogłębia zmartwienie", "w": [ "Kimś, kto zawsze przynosi dobre wieści", "Lekarzem w leprozorium", "Prorokiem zapowiadającym koniec świata" ], "e": "Przyjaciele Hioba zamiast pocieszać, obwiniali go. Stąd ten frazeologizm." },
+  { "t": "Hiob", "q": "Co oznacza słowo „leprozorium”?", "a": "Kolonię lub dom dla chorych na trąd", "w": [ "Świątynię w Jerozolimie", "Zbiór psalmów", "Rodzaj modlitwy błagalnej" ], "e": "Leprozorium pełniło funkcję szpitala i izolatki dla trędowatych." },
+  { "t": "Psalmy", "q": "Kto był uznawany za autora psalmów?", "a": "Król Dawid", "w": [ "Kohelet", "Święty Jan", "Hiob" ], "e": "Imię Dawida pojawia się na początku ok. 70 psalmów; inne przypisywano m.in. Salomonowi." },
+  { "t": "Psalmy", "q": "Psalm to gatunek…", "a": "liryczny: uroczysta pieśń religijna o charakterze modlitwy lub hymnu", "w": [ "epicki: opowieść z ukrytym pouczeniem", "dramatyczny: rozmowa Boga z szatanem", "prorocki: wizja końca świata" ], "e": "Psalm należy do liryki. Opowieść z pouczeniem to przypowieść (epika)." },
+  { "t": "Psalmy", "q": "Najstarsze psalmy mogą pochodzić z…", "a": "XI w. p.n.e.", "w": [ "I w. n.e.", "V w. n.e.", "XV w." ], "e": "Badacze wskazują na archaiczny język. Najstarsze z XI w. p.n.e., ostatnie z III w. p.n.e." },
+  { "t": "Psalmy", "q": "W Psalmie 23 pasterz symbolizuje…", "a": "Boga", "w": [ "króla Dawida", "wiernego człowieka", "szatana" ], "e": "Pasterz to Bóg, owca to wierny, a ciemna dolina to zło, choroba, śmierć." },
+  { "t": "Psalmy", "q": "Który z poniższych NIE jest rodzajem psalmów z lekcji?", "a": "prorocze", "w": [ "pochwalne", "dziękczynne", "błagalne" ], "e": "Rodzaje psalmów: pochwalne, dydaktyczne, dziękczynne, błagalne." },
+  { "t": "Kohelet", "q": "Kiedy powstała Księga Koheleta?", "a": "ok. III lub II w. p.n.e.", "w": [ "ok. V w. p.n.e.", "XI w. p.n.e.", "I w. n.e." ], "e": "Kohelet: ok. III lub II w. p.n.e." },
+  { "t": "Kohelet", "q": "Co wiemy o słowie „Kohelet”?", "a": "Wskazuje na autora, ale nie jest imieniem własnym", "w": [ "To imię syna Dawida", "To nazwa wyspy", "To hebrajskie słowo „baranek”" ], "e": "Nazwa wskazuje autora, lecz to nie imię własne (oznacza kogoś przemawiającego do zgromadzenia)." },
+  { "t": "Kohelet", "q": "Czym jest vanitas?", "a": "Motywem marności świata: przemijania i ulotności życia", "w": [ "Motywem ponownego przyjścia Chrystusa", "Rodzajem psalmu", "Obrazem w kształcie koła" ], "e": "„Marność nad marnościami… wszystko jest marnością” to słowa Koheleta." },
+  { "t": "Kohelet", "q": "Czego dociekał autor Księgi Koheleta?", "a": "Sensu ludzkiego życia i drogi do prawdziwego szczęścia", "w": [ "Daty końca świata", "Przyczyn cierpienia Hioba", "Znaczenia liczby 7" ], "e": "Kohelet rozważa sens ludzkich starań i szuka drogi do szczęścia." },
+  { "t": "Przypowieść", "q": "Przypowieść (parabola) należy do…", "a": "epiki", "w": [ "liryki", "dramatu", "publicystyki" ], "e": "To opowieść o charakterze dydaktycznym, więc epika." },
+  { "t": "Przypowieść", "q": "Które zdanie NIE pasuje do przypowieści?", "a": "Bohaterowie mają bogate, indywidualne cechy", "w": [ "Czas i miejsce akcji są nieokreślone", "Ma charakter dydaktyczny", "Świat przedstawiony podporządkowany jest sensowi przenośnemu" ], "e": "Bohaterowie przypowieści są pozbawieni cech indywidualnych." },
+  { "t": "Przypowieść", "q": "W przypowieści o synu marnotrawnym ojciec to…", "a": "Bóg", "w": [ "Kohelet", "król Dawid", "szatan" ], "e": "Ojciec to Bóg, a synowie to ludzie o różnych postawach wobec wiary." },
+  { "t": "Przypowieść", "q": "Pouczenie przypowieści o robotnikach w winnicy:", "a": "Bóg nagrodzi wierzących niezależnie od tego, kiedy weszli na właściwą drogę", "w": [ "Kto pracuje dłużej, dostaje więcej", "Winnica to symbol grzechu", "Należy unikać pracy w upale" ], "e": "Właściciel winnicy to Bóg; liczy się nawrócenie, nie moment." },
+  { "t": "Apokalipsa", "q": "Co oznacza słowo „apokalipsa”?", "a": "Objawienie (odsłonięcie tego, co zakryte)", "w": [ "Koniec świata", "Wojnę", "Marność" ], "e": "Uwaga, pułapka! Dziś kojarzy się z katastrofą, ale znaczy „objawienie”." },
+  { "t": "Apokalipsa", "q": "Do jakiego rodzaju ksiąg należy Apokalipsa św. Jana?", "a": "proroczych (profetycznych)", "w": [ "mądrościowych", "historycznych", "poetyckich" ], "e": "Apokalipsa to księga prorocza." },
+  { "t": "Apokalipsa", "q": "Kiedy Apokalipsa uzyskała ostateczny kształt?", "a": "w I w. n.e.", "w": [ "w V w. p.n.e.", "w XI w. p.n.e.", "w IV w. n.e." ], "e": "Tekst był przeredagowywany, ale ostateczny kształt uzyskał w I w. n.e." },
+  { "t": "Apokalipsa", "q": "Gdzie przebywał autor Apokalipsy, zesłany wskutek prześladowań?", "a": "Na wyspie Patmos", "w": [ "W Babilonie", "Na pustyni", "W Damaszku" ], "e": "Autor nazywa siebie Janem; najczęściej utożsamia się go ze św. Janem Ewangelistą." },
+  { "t": "Apokalipsa", "q": "W jakich czasach powstała Apokalipsa?", "a": "Prześladowań chrześcijan przez Imperium Rzymskie", "w": [ "Niewoli egipskiej Izraelitów", "Panowania króla Dawida", "Budowy wieży Babel" ], "e": "Wpłynął też bunt Żydów przeciw Rzymowi i zburzenie Jerozolimy." },
+  { "t": "Apokalipsa", "q": "Kogo symbolizuje Baranek w Apokalipsie?", "a": "Jezusa Chrystusa", "w": [ "Świętego Jana", "Szatana", "Naród Izraela" ], "e": "Baranek to Chrystus." },
+  { "t": "Apokalipsa", "q": "Czym jest paruzja?", "a": "Ponownym przyjściem (objawieniem) Chrystusa", "w": [ "Ostatnim psalmem", "Upadkiem Babilonu", "Potopem" ], "e": "Paruzja to ponowne przyjście." },
+  { "t": "Apokalipsa", "q": "Babilon w Apokalipsie to symbol…", "a": "miejsca, gdzie panuje grzech i zepsucie", "w": [ "raju", "przymierza z Bogiem", "nawrócenia" ], "e": "Babilon to miasto grzechu i zepsucia." },
+  { "t": "Apokalipsa", "q": "Kto namalował tryptyk „Sąd Ostateczny” z Muzeum Narodowego w Gdańsku?", "a": "Hans Memling", "w": [ "Michał Anioł", "Leonardo da Vinci", "Jan Matejko" ], "e": "Memling, malarz niderlandzki, lata 1467–1473. Michał Anioł namalował fresk „Sąd Ostateczny”." },
+  { "t": "Pojęcia", "q": "Tryptyk to…", "a": "dzieło składające się z trzech części", "w": [ "obraz w kształcie koła", "malowidło na mokrym tynku", "pieśń dziękczynna" ], "e": "Obraz w kształcie koła to tondo, a malowidło na tynku to fresk." },
+  { "t": "Symbolika", "q": "„Droga do Damaszku” to aluzja do…", "a": "nawrócenia Szawła", "w": [ "ucieczki z Egiptu", "drogi krzyżowej", "budowy wieży Babel" ], "e": "Szaweł nawrócił się w drodze do Damaszku i stał się św. Pawłem." },
+  { "t": "Biblizmy", "q": "Biblizm „pomieszanie języków” pochodzi z opowieści o…", "a": "budowie wieży Babel (Stary Testament)", "w": [ "synu marnotrawnym", "Hiobie", "Sądzie Ostatecznym" ], "e": "Biblizm ułatwia odczytanie sensu tekstu, np. o braku porozumienia między ludźmi." }
+ ],
+ pf: [
+  { "q": "Apokalipsa znaczy dosłownie „katastrofa”.", "a": false, "e": "Znaczy „objawienie”." },
+  { "q": "Księga Koheleta zawiera słowa „Marność nad marnościami i wszystko marność”.", "a": true, "e": "To motyw vanitas." },
+  { "q": "Hiob cierpiał, bo popełnił ciężki grzech.", "a": false, "e": "To cierpienie niezawinione." },
+  { "q": "Przypowieść ma dokładnie określony czas i miejsce akcji.", "a": false, "e": "Czas i miejsce są nieokreślone." },
+  { "q": "Gołębica to symbol miłości, pojednania, pokoju i Ducha Świętego.", "a": true, "e": "Zgadza się." },
+  { "q": "Wąż w Biblii symbolizuje diabła (szatana).", "a": true, "e": "Tak, np. w raju." },
+  { "q": "Kolor żółty symbolizuje świętość i niewinność.", "a": false, "e": "Żółty to zdrada i fałsz. Świętość i niewinność to biel." },
+  { "q": "Liczba 12 kojarzy się z Izraelem (12 pokoleń) i oznacza pełnię.", "a": true, "e": "Zgadza się." },
+  { "q": "„Sąd Ostateczny” Michała Anioła to fresk.", "a": true, "e": "Tryptyk to obraz Memlinga." },
+  { "q": "Imię Dawida widnieje na początku wszystkich psalmów.", "a": false, "e": "Tylko ok. 70 utworów." },
+  { "q": "Potop jest żywiołem oczyszczającym, ale też niszczącym (karą za grzechy).", "a": true, "e": "Ma podwójne znaczenie." },
+  { "q": "Jeździec z mieczem na czerwonym koniu oznacza głód.", "a": false, "e": "Oznacza wojnę. Głód to jeździec z wagą na czarnym koniu." },
+  { "q": "„Wielki dzień gniewu” to w Apokalipsie Sąd Ostateczny.", "a": true, "e": "Zgadza się." },
+  { "q": "Pustynia w Biblii to miejsce samotności, pokusy i próby.", "a": true, "e": "Także oczyszczenia i spotkania z Bogiem." }
+ ],
+ pary: [
+  { "name": "Czterech jeźdźców Apokalipsy", "pairs": [ [ "Łuk, biały koń", "zwycięstwo" ], [ "Miecz, czerwony koń", "wojna" ], [ "Waga, czarny koń", "głód" ], [ "Trupio blady koń", "śmierć" ] ] },
+  { "name": "Zwierzęta", "pairs": [ [ "Ryba", "symbol chrześcijaństwa" ], [ "Owca", "Chrystus / zagubiony człowiek" ], [ "Wąż", "diabeł, szatan" ], [ "Gołębica", "pokój, Duch Święty" ] ] },
+  { "name": "Liczby", "pairs": [ [ "3", "Trójca Święta, doskonałość" ], [ "4", "doskonała liczba ziemska" ], [ "7", "pełnia, Boska doskonałość" ], [ "12", "Izrael, pełnia" ] ] },
+  { "name": "Kolory", "pairs": [ [ "Biały", "świętość, niewinność" ], [ "Czerwony", "cierpienie, krew" ], [ "Złoty", "doskonałość, bogactwo" ], [ "Żółty", "zdrada, fałsz" ] ] },
+  { "name": "Miejsca i zdarzenia", "pairs": [ [ "Góra", "zawarcie przymierza, objawienie" ], [ "Pustynia", "pokusa, próba, oczyszczenie" ], [ "Potop", "kara i oczyszczenie" ], [ "Droga do Damaszku", "nawrócenie Szawła" ] ] },
+  { "name": "Pojęcia", "pairs": [ [ "Tryptyk", "dzieło z trzech części" ], [ "Tondo", "obraz w kształcie koła" ], [ "Paruzja", "ponowne przyjście" ], [ "Vanitas", "marność świata" ] ] }
+ ],
+ otwarte: [
+  { "q": "Wyjaśnij, na czym polega problem cierpienia niezawinionego na przykładzie Hioba.", "model": [ "Hiob był człowiekiem sprawiedliwym i bogobojnym. Szatan twierdził, że Hiob kocha Boga tylko dlatego, że mu się powodzi. Bóg pozwolił mu odebrać Hiobowi majątek, dzieci i zdrowie.", "Hiob cierpiał, choć nie zawinił, a mimo to nie odwrócił się od Boga. Pokazuje, że prawdziwa wiara jest bezinteresowna i nie zależy od nagrody. Dlatego Hiob jest archetypem cierpienia niezawinionego." ], "pts": [ "Hiob był sprawiedliwy, nie zawinił", "Zakład / próba: Bóg pozwala szatanowi", "Utrata majątku, dzieci, zdrowia", "Hiob zachowuje wiarę", "Wniosek: wiara bezinteresowna, archetyp" ] },
+  { "q": "Czym jest motyw vanitas i jak przejawia się w Księdze Koheleta?", "model": [ "Vanitas to motyw marności świata: wszystko przemija, a ludzkie życie jest ulotne.", "Kohelet stwierdza: „Marność nad marnościami… wszystko jest marnością”. Rozważa sens ludzkich starań (bogactwa, pracy, mądrości) i dochodzi do wniosku, że wszystko, co ziemskie, przemija, więc szuka drogi do prawdziwego szczęścia." ], "pts": [ "Definicja: marność, przemijanie, ulotność życia", "Cytat lub parafraza „marność nad marnościami”", "Ludzkie starania (praca, bogactwo) przemijają", "Poszukiwanie sensu życia / prawdziwego szczęścia" ] },
+  { "q": "Podaj trzy cechy przypowieści i odnieś je do przypowieści o synu marnotrawnym.", "model": [ "Przypowieść to gatunek epicki o charakterze dydaktycznym; bohaterowie nie mają cech indywidualnych; czas i miejsce są nieokreślone; liczy się sens przenośny.", "W przypowieści o synu marnotrawnym ojciec to Bóg, a synowie to ludzie o różnych postawach wobec wiary. Młodszy syn odchodzi i wraca skruszony, a ojciec przyjmuje go z radością. Pouczenie: Bóg przebacza każdemu, kto szczerze żałuje." ], "pts": [ "Dydaktyzm / sens przenośny", "Bohaterowie bez cech indywidualnych", "Nieokreślony czas i miejsce", "Ojciec = Bóg, synowie = ludzie", "Pouczenie: Boże miłosierdzie i przebaczenie" ] },
+  { "q": "Przedstaw okoliczności powstania Apokalipsy św. Jana i wyjaśnij znaczenie jej tytułu.", "model": [ "Apokalipsa powstała w I w. n.e., w czasach prześladowań pierwszych chrześcijan przez Imperium Rzymskie. Wpłynęły na nią też bunt Żydów i zburzenie Jerozolimy.", "Autor nazywa się Janem i pisze, że został zesłany na wyspę Patmos; zwykle utożsamia się go ze św. Janem Ewangelistą. Słowo „apokalipsa” oznacza objawienie, czyli odsłonięcie tego, co zakryte. To księga prorocza mówiąca o końcu świata, sądzie i życiu wiecznym." ], "pts": [ "I w. n.e.", "Prześladowania chrześcijan przez Rzym", "Jan, wyspa Patmos", "Apokalipsa = objawienie", "Księga prorocza: koniec świata, sąd, przeznaczenie człowieka" ] },
+  { "q": "Jak w Psalmie 23 przedstawiony jest Bóg i człowiek? Wyjaśnij symbole.", "model": [ "Psalm 23 zbudowany jest na obrazie pasterza i owiec. Pasterz to Bóg, który prowadzi, chroni i troszczy się. Owca to wierny człowiek, który mu ufa.", "Ciemna dolina oznacza zło, chorobę, śmierć. Człowiek nie lęka się nawet tam, bo Bóg jest z nim. Obraz Boga jest pełen troski i bezpieczeństwa, a postawa człowieka to zaufanie." ], "pts": [ "Pasterz = Bóg (opieka, prowadzenie)", "Owca = wierny", "Dolina = zło, ciemność, śmierć", "Postawa człowieka: ufność, brak lęku" ] }
+ ]
+});

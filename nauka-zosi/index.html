@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nauka Zosi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700;800&family=Alegreya:ital,wght@0,400;0,600;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="silnik/styl.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Powtórki przed sprawdzianami</div>
+    <h1><span class="initial">N</span>auka Zosi</h1>
+    <p class="sub">Wybierz test. Każdy to gra w kilku etapach: quiz, prawda/fałsz, pary i pytania otwarte.</p>
+  </header>
+  <main id="list"></main>
+</div>
+<script src="testy/katalog.js"></script>
+<script>
+(function(){
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const best=k=>{try{return JSON.parse(localStorage.getItem("nz:"+k))}catch(e){return null}};
+  const groups={};
+  (window.KATALOG||[]).forEach(t=>(groups[t.przedmiot]=groups[t.przedmiot]||[]).push(t));
+  const html=Object.keys(groups).map(p=>{
+    const items=groups[p];
+    return '<section class="subject"><h2>'+esc(p)+' <small>'+items.length+' '+(items.length===1?'test':'testy')+'</small></h2><div class="tiles">'+
+      items.map(t=>{const b=best(t.plik);
+        return '<a class="ttile" href="test.html?t='+encodeURIComponent(t.plik).replace(/%2F/g,"/")+'"><b>'+esc(t.tytul)+'</b><span>'+esc(t.zakres||"")+'</span>'+
+          (t.data?'<span>Sprawdzian: '+esc(t.data)+'</span>':'')+
+          (b?'<span class="best">Najlepszy wynik: '+b.best+' pkt ('+b.pct+'%)</span>':'<span class="best">Jeszcze nie grane</span>')+'</a>'}).join("")+
+      '</div></section>'}).join("");
+  document.getElementById("list").innerHTML=html||'<div class="card"><p>Brak testów.</p></div>';
+})();
+</script>
+</body>
+</html>
